@@ -1,0 +1,14 @@
+{
+    "name": "sdm/banking",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Korneliusz Szymański",
+            "email": "korneliusz.szymanski@bluesoft.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}
