@@ -6,7 +6,7 @@ namespace App\Operations;
 
 use App\Accounts\IAccount;
 
-class MakeDepositOperation implements IOperation
+class MakeDepositOperation extends Operation implements IOperation
 {
 
     public function perform(IAccount $account): void

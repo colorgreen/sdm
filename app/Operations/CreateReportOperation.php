@@ -6,7 +6,7 @@ namespace App\Operations;
 
 use App\Accounts\IAccount;
 
-class CreateReportOperation implements IOperation
+class CreateReportOperation extends Operation implements IOperation
 {
 
     public function perform(IAccount $account): void

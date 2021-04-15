@@ -6,7 +6,7 @@ namespace App\Operations;
 
 use App\Accounts\IAccount;
 
-class CalculateInterestRateOperation implements IOperation
+class CalculateInterestRateOperation extends Operation implements IOperation
 {
 
     public function perform(IAccount $account): void
