@@ -4,7 +4,10 @@
 namespace App\Accounts;
 
 
-class Account implements IAccount
+use App\InterestRates\IInterestMechanism;
+use App\InterestRates\InterestMechanism;
+
+class Account implements IAccount, IInterestMechanism
 {
 
     public function getBalance(): float
@@ -23,5 +26,10 @@ class Account implements IAccount
 
     public function openLoan(): Loan
     {
+    }
+
+    public function calculateInterest(): float
+    {
+        return (new InterestMechanism($this))->calculateInterest();
     }
 }
