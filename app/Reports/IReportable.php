@@ -2,7 +2,7 @@
 
 namespace App\Reports;
 
-interface IReportable
+interface IReportable //visitor
 {
-    public function report();
+    public function report(array $data): IReportable;
 }

@@ -4,9 +4,10 @@
 namespace App\Reports;
 
 
-class Report
+class Report //visitor
 {
-    public function prepare(IReportable $reportable): void
+    public function prepareReport(IReportable $reportable, array $data): IReportable
     {
+        return $reportable->report($data);
     }
 }

@@ -22,7 +22,7 @@ class OperationsHistory implements IReportable
         return $this->operations;
     }
 
-    public function report()
+    public function report(array $data): IReportable
     {
         // TODO: Implement report() method.
     }

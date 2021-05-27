@@ -30,6 +30,12 @@ class Account implements IAccount, IInterestMechanism
 
     public function calculateInterest(): float
     {
-        return (new InterestMechanism($this))->calculateInterest();
+        return (new InterestMechanism($this))->calculateInterest(); //State
+    }
+
+    public function getOverdraft(): float
+    {
+        $overdraft = new Overdraft($this->getBalance()); //Decorator
+        return $overdraft->getOverdraftBalance();
     }
 }
