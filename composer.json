@@ -3,8 +3,13 @@
     "type": "project",
     "authors": [
         {
-            "name": "Korneliusz Szymański",
-            "email": "korneliusz.szymanski@bluesoft.com"
+            "name": "Korneliusz Szymański"
+        },
+        {
+            "name": "Mateusz Tamborski"
+        },
+        {
+            "name": "Łukasz Stachowiak"
         }
     ],
     "require": {},
