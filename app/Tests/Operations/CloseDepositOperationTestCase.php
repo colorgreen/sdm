@@ -8,5 +8,7 @@ use BaseTestCase;
 
 class CloseDepositOperationTestCase extends BaseTestCase
 {
-
+    public function TestPerform(): void
+    {
+    }
 }

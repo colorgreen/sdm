@@ -8,5 +8,7 @@ use BaseTestCase;
 
 class OpenLoanOperationTestCase extends BaseTestCase
 {
-
+    public function TestPerform(): void
+    {
+    }
 }
