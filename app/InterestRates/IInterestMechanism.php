@@ -2,7 +2,9 @@
 
 namespace App\InterestRates;
 
+use Product;
+
 interface IInterestMechanism
 {
-    public function calculateInterest(): float;
+    public function calculateInterest(Product $product): float;
 }

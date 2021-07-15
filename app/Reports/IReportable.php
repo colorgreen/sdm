@@ -2,7 +2,15 @@
 
 namespace App\Reports;
 
-interface IReportable //visitor
+use Deposit;
+use Loan;
+use Product;
+
+interface IReportable
 {
-    public function report(array $data): IReportable;
+    public function visitDeposit(Deposit $deposit): string;
+
+    public function visitLoan(Loan $loan): string;
+
+    public function visitProduct(Product $product): string;
 }

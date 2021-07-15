@@ -1,0 +1,43 @@
+<?php
+
+use App\InterestRates\AccountInterestRate;
+
+class AccountDecorator extends Product implements IProduct
+{
+    protected Product $product;
+
+    private AccountInterestRate $interestRate;
+
+    public function __construct(Product $product)
+    {
+        parent::__construct($product->getOwner());
+
+        $this->product = $product;
+        $this->interestRate = new AccountInterestRate();
+    }
+
+    public function decreaseBalance(Balance $payment): void
+    {
+        $this->product->decreaseBalance($payment);
+    }
+
+    public function increaseBalance(Balance $payment): void
+    {
+        $this->product->increaseBalance($payment);
+    }
+
+    public function getBalance(): Balance
+    {
+        return $this->product->getBalance();
+    }
+
+    public function getOpeningDateTime(): DateTime
+    {
+        return $this->product->getOpeningDateTime();
+    }
+
+    public function accept(\App\Reports\IReportable $visitor): string
+    {
+        $this->product->accept($visitor);
+    }
+}
