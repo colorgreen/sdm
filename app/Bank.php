@@ -46,4 +46,9 @@ class Bank extends OperationsHistory
     {
         return $this->accounts;
     }
+
+    public function getBalance(): Balance
+    {
+        return $this->balance;
+    }
 }

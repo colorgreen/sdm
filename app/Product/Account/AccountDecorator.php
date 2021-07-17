@@ -6,14 +6,14 @@ class AccountDecorator extends Product implements IProduct
 {
     protected Product $product;
 
-    private AccountInterestRate $interestRate;
+    private AccountInterestRate|null $interestRate;
 
-    public function __construct(Product $product)
+    public function __construct(Product $product, AccountInterestRate $accountInterestRate = null)
     {
         parent::__construct($product->getOwner());
 
         $this->product = $product;
-        $this->interestRate = new AccountInterestRate();
+        $this->interestRate = $accountInterestRate;
     }
 
     public function decreaseBalance(Balance $payment): void
@@ -38,6 +38,6 @@ class AccountDecorator extends Product implements IProduct
 
     public function accept(\App\Reports\IReportable $visitor): string
     {
-        $this->product->accept($visitor);
+        return $this->product->accept($visitor);
     }
 }

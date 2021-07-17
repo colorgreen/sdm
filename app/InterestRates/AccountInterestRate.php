@@ -14,7 +14,7 @@ class AccountInterestRate implements IInterestMechanism
     {
         $compareBalance = new \Balance(self::MINIMAL_CASH);
 
-        return $compareBalance->compareTo($product->getBalance()) > 0
+        return $compareBalance->compareTo($product->getBalance()) < 0
             ? self::BETTER_INTEREST_RATE : self::WORSE_INTEREST_RATE;
     }
 }
